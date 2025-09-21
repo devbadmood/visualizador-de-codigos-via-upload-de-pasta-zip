@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 21-Set-2025 às 03:09
+-- Tempo de geração: 21-Set-2025 às 03:17
 -- Versão do servidor: 8.3.0
 -- versão do PHP: 8.3.6
 
@@ -24,6 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `arquivos`
+--
+
+DROP TABLE IF EXISTS `arquivos`;
+CREATE TABLE IF NOT EXISTS `arquivos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `projeto_id` int DEFAULT NULL,
+  `nome_arquivo` varchar(255) DEFAULT NULL,
+  `caminho` text,
+  `data_upload` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `projetos`
 --
 
@@ -34,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `projetos` (
   `caminho` text,
   `data_upload` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
